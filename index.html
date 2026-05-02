@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Notch Builders of Iowa</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #F9C520;
+    --orange: #E87010;
+    --green: #2E7A28;
+    --green-light: #4AAF46;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --mid: #2a2a2a;
+    --light-bg: #f5f5f5;
+    --white: #ffffff;
+    --gray: #888;
+    --red: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+
+  nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--yellow); }
+
+  .nav-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .nav-social a {
+    color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+    font-size: 16px;
+  }
+  .nav-social a:hover { color: var(--yellow); }
+
+  .btn-nav {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-nav:hover {
+    background: var(--white);
+    color: var(--dark) !important;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .hero-video-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-placeholder-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #222;
+    border: 2px dashed #444;
+  }
+
+  .video-placeholder-label svg {
+    opacity: 0.3;
+  }
+
+  .video-placeholder-label span {
+    color: #666;
+    font-size: 14px;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hero-logo-svg {
+    width: 120px;
+    height: 80px;
+    margin-bottom: 8px;
+  }
+
+  .hero-name-top {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--yellow) 0%, var(--orange) 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 16px rgba(232,114,12,0.4));
+  }
+
+  .hero-name-sub {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .btn-hero {
+    margin-top: 8px;
+    display: inline-block;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.8);
+    color: var(--white);
+    padding: 16px 40px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .btn-hero:hover {
+    background: var(--white);
+    color: var(--dark);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    animation: bounce 1.8s infinite;
+    font-size: 20px;
+    opacity: 0.6;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ─── INFO BAR ─── */
+  .info-bar {
+    background: var(--white);
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .info-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 48px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dark);
+    font-weight: 500;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .info-bar-item:last-child { border-right: none; }
+
+  .info-bar-icon {
+    color: var(--green);
+    font-size: 18px;
+  }
+
+  /* ─── SERVICES ─── */
+  #services {
+    padding: 100px 60px;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 60px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: left;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+  }
+
+  .service-img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #999;
+    font-size: 13px;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid var(--green);
+  }
+
+  .service-img-placeholder svg { opacity: 0.35; }
+
+  .service-body { padding: 24px; }
+
+  .service-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .learn-more {
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+    cursor: pointer;
+  }
+  .learn-more:hover { gap: 12px; }
+
+  /* ─── DARK SECTION ─── */
+  #why {
+    background: var(--dark);
+    padding: 100px 60px;
+    color: var(--white);
+  }
+
+  .why-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .why-left {}
+
+  .why-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #555;
+    font-size: 13px;
+    font-family: 'Barlow', sans-serif;
+    border: 2px dashed #333;
+    margin-bottom: 40px;
+  }
+
+  .why-img-placeholder svg { opacity: 0.25; }
+
+  .why-tagline {
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .why-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .why-desc {
+    color: rgba(255,255,255,0.65);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 16px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s;
+  }
+  .btn-cta:hover { background: #d4620a; }
+
+  /* Why right - reasons */
+  .why-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 16px;
+  }
+
+  .why-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .why-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 28px;
+  }
+
+  .reason-card {
+    background: var(--mid);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 3px solid var(--green-light);
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: start;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .reason-card:hover { background: #2f2f2f; }
+
+  .reason-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: var(--green-light);
+    line-height: 1;
+  }
+
+  .reason-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .reason-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  /* ─── RECENT PROJECTS ─── */
+  #projects {
+    padding: 100px 60px;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .project-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #d5d5d5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #999;
+    font-size: 12px;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 6px;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  .project-placeholder:hover { transform: scale(1.02); }
+  .project-placeholder svg { opacity: 0.3; }
+
+  /* ─── REVIEWS ─── */
+  #reviews {
+    background: var(--white);
+    padding: 100px 60px;
+    text-align: center;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 48px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 28px 24px;
+    text-align: left;
+    transition: box-shadow 0.2s;
+  }
+  .review-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+
+  .stars { color: #F5A623; font-size: 18px; margin-bottom: 14px; }
+
+  .review-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .reviewer-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--dark);
+    letter-spacing: 0.5px;
+  }
+
+  .reviewer-source {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+
+  .btn-google {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid #ddd;
+    padding: 14px 28px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-google:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* ─── SOCIAL / SEE US ─── */
+  #social {
+    background: var(--dark);
+    padding: 80px 60px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .social-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .social-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 16px;
+    margin-bottom: 48px;
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .social-placeholder {
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #222;
+    border: 2px dashed #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #555;
+    font-size: 13px;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 4px;
+  }
+  .social-placeholder svg { opacity: 0.25; }
+
+  /* ─── FAQ ─── */
+  #faq {
+    background: var(--light-bg);
+    padding: 100px 60px;
+  }
+
+  .faq-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .faq-list {
+    margin-top: 48px;
+    text-align: left;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .faq-plus {
+    color: var(--orange);
+    font-size: 22px;
+    font-weight: 300;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  .faq-item.open .faq-plus { transform: rotate(45deg); }
+
+  .faq-a {
+    display: none;
+    padding: 0 0 20px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--dark);
+    padding: 100px 60px;
+    color: var(--white);
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .contact-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 40px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .contact-icon {
+    color: var(--orange);
+    font-size: 20px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .contact-info-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+
+  .contact-info-value {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  .contact-info-value a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-info-value a:hover { color: var(--yellow); }
+
+  /* Form */
+  .contact-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 40px;
+  }
+
+  .form-row {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .form-label span { color: var(--orange); }
+
+  .form-input, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--white);
+    padding: 14px 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 2px;
+  }
+
+  .form-input:focus, .form-textarea:focus {
+    border-color: var(--orange);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .btn-submit:hover { background: #d4620a; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0a0a0a;
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 2px;
+  }
+
+  .footer-logo span { color: var(--orange); }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--orange); }
+
+  /* Dropdown */
+  .nav-dropdown { position: relative; }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    min-width: 180px;
+    padding: 8px 0;
+    z-index: 999;
+  }
+  .nav-dropdown:hover .dropdown-menu { display: block; }
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7) !important;
+  }
+  .dropdown-menu a:hover { background: rgba(255,255,255,0.05); color: var(--yellow) !important; }
+
+  .nav-arrow { font-size: 10px; margin-left: 3px; opacity: 0.6; }
+
+  /* House SVG icon */
+  .house-svg { color: var(--orange); }
+
+  @media (max-width: 900px) {
+    .services-grid, .projects-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .why-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .why-heading, .why-title { font-size: 36px; }
+    nav { padding: 0 20px; }
+    .nav-left { gap: 16px; }
+    .hero-name-top { font-size: 48px; }
+    #services, #projects, #reviews, #why, #faq, #contact, #social { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#about">About</a>
+    <div class="nav-dropdown">
+      <a href="#services">Services <span class="nav-arrow">▾</span></a>
+      <div class="dropdown-menu">
+        <a href="/services/general-contracting.html">General Contracting</a>
+        <a href="/services/residential-framing.html">Residential Framing</a>
+        <a href="/services/additions.html">Additions</a>
+        <a href="/services/remodeling.html">Remodeling</a>
+        <a href="/services/window-door-installation.html">Window & Door Installation</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="nav-logo">
+    <img src="TNB_Logo.png" alt="Top Notch Builders of Iowa">
+  </a>
+
+  <div class="nav-right">
+    <a href="#contact">Contact</a>
+    <div class="nav-social">
+      <!-- Facebook icon -->
+      <a href="https://www.facebook.com/TNBofIA/" target="_blank" title="Facebook">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+    <a href="#contact" class="btn-nav">Free Estimate</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-logo-text">
+      <div class="hero-name-top">TOP NOTCH</div>
+      <div class="hero-name-sub">Builders of Iowa</div>
+    </div>
+    <a href="#contact" class="btn-hero">Get a Free Estimate</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-arrow">↓</div>
+  </div>
+</section>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+  <div class="info-bar-item">
+    <span class="info-bar-icon">✓</span>
+    Free Estimates
+  </div>
+  <div class="info-bar-item">
+    <span class="info-bar-icon">📍</span>
+    Cedar Rapids, Iowa City &amp; Surrounding Areas
+  </div>
+  <div class="info-bar-item">
+    <span class="info-bar-icon">🏠</span>
+    General Contracting &bull; Remodeling &bull; New Builds
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What We Do</div>
+  <div class="section-title">Our Services</div>
+  <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+
+    <div class="service-card">
+      <div class="service-img-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Photo will go here</span>
+      </div>
+      <div class="service-body">
+        <div class="service-title">General Contracting</div>
+        <p class="service-desc">Full-service general contracting for residential and commercial projects. We manage your build from start to finish with quality and precision.</p>
+        <a class="learn-more" href="/services/general-contracting.html">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Photo will go here</span>
+      </div>
+      <div class="service-body">
+        <div class="service-title">Residential Framing</div>
+        <p class="service-desc">Precision framing that forms the backbone of every great home. Built strong, built right — the first time.</p>
+        <a class="learn-more" href="/services/residential-framing.html">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>Photo will go here</span>
+      </div>
+      <div class="service-body">
+        <div class="service-title">Additions</div>
+        <p class="service-desc">More space, more value — additions built to blend seamlessly with your existing home and stand the test of time.</p>
+        <a class="learn-more" href="/services/additions.html">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span>Photo will go here</span>
+      </div>
+      <div class="service-body">
+        <div class="service-title">Remodeling</div>
+        <p class="service-desc">Kitchens, bathrooms, basements — we bring new life to existing spaces with craftsmanship that stands the test of time.</p>
+        <a class="learn-more" href="/services/remodeling.html">Learn More →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+        <span>Photo will go here</span>
+      </div>
+      <div class="service-body">
+        <div class="service-title">Window & Door Installation</div>
+        <p class="service-desc">Energy-efficient windows and doors installed properly — sealed tight to keep your home comfortable through every Iowa season.</p>
+        <a class="learn-more" href="/services/window-door-installation.html">Learn More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY / DARK SECTION -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-left">
+      <div class="why-tagline">See The Difference</div>
+      <div class="why-heading">Quality Built.<br>Iowa Strong.</div>
+      <p class="why-desc">Watch how our crew transforms your project from blueprint to reality — with precision, skill, and craftsmanship that speaks for itself.</p>
+      <a href="#contact" class="btn-cta">Get Your Free Estimate</a>
+      <div style="margin-top:40px;">
+        <div class="why-img-placeholder">
+          <svg width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" color="#555">
+            <circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/>
+          </svg>
+          <span>Photo / video will go here</span>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="why-label">Why Top Notch</div>
+      <div class="why-title">Why Iowa Homeowners<br>Choose Top Notch Builders</div>
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <div>
+          <div class="reason-title">Quality Craftsmanship</div>
+          <div class="reason-desc">Every project is completed with precision, using only premium materials and proven techniques that stand the test of time.</div>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <div>
+          <div class="reason-title">Free Estimates</div>
+          <div class="reason-desc">We offer free, no-obligation estimates. Our team will assess your project and provide an honest, transparent quote.</div>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <div>
+          <div class="reason-title">Local Expertise</div>
+          <div class="reason-desc">Based in Iowa — we understand local building codes, the Iowa climate, and what your home needs to stay strong year-round.</div>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">04</div>
+        <div>
+          <div class="reason-title">Always Available</div>
+          <div class="reason-desc">We're easy to reach and quick to respond. Our team keeps you informed every step of the way.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT PROJECTS -->
+<section id="projects">
+  <div class="section-label">Our Work</div>
+  <div class="section-title">Recent Projects</div>
+  <div class="projects-grid">
+    <div class="project-placeholder">
+      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Photo will go here</span>
+    </div>
+    <div class="project-placeholder">
+      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Photo will go here</span>
+    </div>
+    <div class="project-placeholder">
+      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Photo will go here</span>
+    </div>
+    <div class="project-placeholder">
+      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Photo will go here</span>
+    </div>
+    <div class="project-placeholder">
+      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Photo will go here</span>
+    </div>
+    <div class="project-placeholder">
+      <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Photo will go here</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-label">What Our Clients Say</div>
+  <div class="section-title">Trusted by Iowa Homeowners</div>
+  <div style="max-width: 600px; margin: 0 auto 48px; text-align: center;">
+    <div style="background: var(--light-bg); border: 1px solid #e0e0e0; border-radius: 8px; padding: 48px 32px;">
+      <div style="font-size: 48px; margin-bottom: 16px;">⭐</div>
+      <div style="font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase;">Reviews Coming Soon</div>
+      <p style="color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">We're just getting started on Google — if you've worked with us, we'd love to hear from you!</p>
+      <a href="https://www.google.com/search?q=Top+Notch+Builders+of+Iowa" target="_blank" class="btn-google">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Leave Us a Google Review
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL / SEE US IN ACTION -->
+<section id="social">
+  <div class="social-title">See Us In Action</div>
+  <p class="social-sub">Follow along on social media for behind-the-scenes looks at our latest projects.</p>
+  <div class="social-grid">
+    <div class="social-placeholder">
+      <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Video / photo will go here</span>
+    </div>
+    <div class="social-placeholder">
+      <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Video / photo will go here</span>
+    </div>
+  </div>
+  <div style="margin-top:32px;">
+    <a href="https://www.facebook.com/TNBofIA/" target="_blank" class="btn-cta">Follow on Facebook</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="section-label">FAQ</div>
+    <div class="section-title">Frequently Asked Questions</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does a project take?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a">Project timelines vary depending on scope. We'll give you a realistic timeline upfront and keep you updated throughout the process.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you offer free estimates?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a">Yes! We provide free, no-obligation estimates. Contact us and we'll assess your project and provide an honest, transparent quote.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What areas do you serve?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a">We serve Cedar Rapids, Marion, Coralville, North Liberty, Solon, Iowa City, and the surrounding areas.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are you licensed and insured?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a">Yes, Top Notch Builders of Iowa is fully licensed and insured. You can rest easy knowing your project is in capable hands.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What types of projects do you take on?
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a">We handle general contracting, custom home builds, remodeling (kitchens, bathrooms, basements), home additions, and commercial projects.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="contact-label">Get Started</div>
+      <div class="contact-heading">Ready to Build<br>Something Great?</div>
+
+      <div class="contact-info-item">
+        <span class="contact-icon">📞</span>
+        <div>
+          <div class="contact-info-label">Phone</div>
+          <div class="contact-info-value"><a href="tel:5638802793">(563) 880-2793</a></div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <span class="contact-icon">✉️</span>
+        <div>
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="mailto:rhenning1231@hotmail.com">rhenning1231@hotmail.com</a></div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <span class="contact-icon">📍</span>
+        <div>
+          <div class="contact-info-label">Address</div>
+          <div class="contact-info-value">1426 Hwy 1 NE, Solon, IA 52333</div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <span class="contact-icon">🕐</span>
+        <div>
+          <div class="contact-info-label">Hours</div>
+          <div class="contact-info-value">Always Open</div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <span class="contact-icon">📍</span>
+        <div>
+          <div class="contact-info-label">Service Areas</div>
+          <div class="contact-info-value">Cedar Rapids · Marion · Coralville<br>North Liberty · Solon · Iowa City</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-row">
+        <label class="form-label">Name <span>*</span></label>
+        <input class="form-input" type="text" placeholder="Your full name">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Phone <span>*</span></label>
+        <input class="form-input" type="tel" placeholder="Your phone number">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="Your email address">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Project Details</label>
+        <textarea class="form-textarea" placeholder="Tell us about your project..."></textarea>
+      </div>
+      <button class="btn-submit">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="TNB_Logo.png" alt="Top Notch Builders of Iowa" style="height: 44px; width: auto; border-radius: 4px;">
+  <div class="footer-copy">© 2025 Top Notch Builders of Iowa. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.facebook.com/TNBofIA/" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+
+  // Smooth nav scroll highlight
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(8,8,8,0.97)';
+    } else {
+      nav.style.background = 'rgba(10,10,10,0.92)';
+    }
+  });
+</script>
+</body>
+</html>
